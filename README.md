@@ -204,12 +204,14 @@ Parameters changed using the messages are not saved when the patch is loaded, so
 
 ![](http://i.imgur.com/gnT8dAI.png) 
 
-___________
+
+### Thanks for reading!
+
 All of the pd files I've included here are within the github repo. If you have any questions, you can find me on Reddit with the username:
 ```
 _megalon_
 ```
 
-Now go out there and make an ADSR patch with a toggleable display :]
+Now go out there and make an ADSR module with a toggleable display :]
 
 ![](http://i.imgur.com/tZcMjsS.gif)
