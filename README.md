@@ -209,3 +209,7 @@ All of the pd files I've included here are within the github repo. If you have a
 ```
 _megalon_
 ```
+
+Now go out there and make an ADSR patch with a toggleable display :]
+
+![](http://i.imgur.com/tZcMjsS.gif)
