@@ -5,14 +5,14 @@
 * **Medium Vanilla**
 * **Advanced Vanilla**
 
-___________
+
 ## Absolute Basics
 
 If you've never touched PD before, check out some of the links in the sidebar. [These tutorials helped me a lot.](http://write.flossmanuals.net/pure-data/introduction2/)
 
 If you know basic pd but just haven't really made a GUI before, these tips should help you get started making the simplest GUIs.
 
-Terms:
+**Terms:**
 
 * *subpatch*: A [pd] object that contains a pd patch. Ex: [pd my-subpatch-name] This is only contained within the parent patch. Each subpatch is separate, even if two subpatches have the same name, changes to one do not affect the other.
 * *abstraction*: Similar to subpatch, but it is it's own file saved on your computer in the same folder of your parent patch. You use abstractions by creating a new object with the name of your abstraction. Ex: [my-abstraction] You can create as many copies of the abstraction that you want within a patch, but when you edit one of them, the changes get applied to all of them.
@@ -25,7 +25,6 @@ Terms:
 * To make GUI creation easier, be sure to use the arrow keys to nudge objects by 1 pixel at a time. You can also hold shift + arrow keys to nudge 10 pixels at a time. I like to use a 10 pixel spacing between objects to make lining everything up easy.
 * Subpatches / abstractions can contain other subpatches / abstractions !
 
-___________
 
 ## Easy Vanilla
 
@@ -75,8 +74,6 @@ For the name: There are a couple of ways you can do this....
 Actually, canvas labels give you a lot of freedom, since you can change their color, you can use them as colored comments! This might not be very efficient, and it probably isn't very performance friendly, but it's easy so lets give it a shot.
 
 
-___________
-
 ## Medium Vanilla
 
 Wouldn't it be nice to have labeled inlets and outlets? 
@@ -121,7 +118,6 @@ Behold.
 
 All of the borders of the GUI objects are being covered up by canvas objects. You can see in the patch on the right that at each of the 4 corners of the GUI objects there is a 1 pixel thick canvas object. This is very inconvenient, slow to modify, and all around frustrating to work with. On top of that, you can only make rectangles with canvas objects. What about arbitrary polygons? Thankfully there is a better way.
 
-___________
  
 ## Advanced Vanilla
 
