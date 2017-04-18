@@ -201,7 +201,7 @@ To make things easier I made two helper objects for setting the colors.
 
 Parameters changed using the messages are not saved when the patch is loaded, so you have to loadbang messages, or use some other state saving method.
 
-![](http://i.imgur.com/B7wVZel.png) 
+![](http://i.imgur.com/gnT8dAI.png) 
 
 ___________
 All of the pd files I've included here are within the github repo. If you have any questions, you can find me on Reddit with the username:
