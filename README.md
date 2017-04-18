@@ -50,9 +50,7 @@ Be careful because the canvas object can extend outside of the graph on parent b
 
 ![](https://i.imgur.com/Dvois5V.png)
 
-Sleek and stylish 
-
-Wow! Very modern. However, we lost the border, name, and the inlets / outlets. Maybe you don't need any of these, but if you want them back:
+Sleek and stylish! Very modern. However, we lost the border, name, and the inlets / outlets. Maybe you don't need any of these, but if you want them back:
 
 For the border: Subtract 2 from the width and height of the canvas object, then move the canvas down and right 1 pixel. 
 
@@ -64,7 +62,7 @@ For the inlets/outlets: Subtract another 2 from the height, and move the canvas 
 
 For the name: There are a couple of ways you can do this....
 
-* Normal: [ubtract another 20 from the height, then move the canvas down 20 pixels. 
+* Normal: Subtract another 20 from the height, then move the canvas down 20 pixels. 
 
 ![](https://i.imgur.com/chXt2k5.png)
 * Better: Instead of resizing the canvas, simply change the canvas's label to the name of the object. You can also change the label's color as well. 
