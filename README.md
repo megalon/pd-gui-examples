@@ -140,7 +140,7 @@ That subpatch contains the template for the struct, which includes all of the di
 
 Close that subpatch and make a new one next to it. This subpatch will hold the drawing that we are going to make. I called mine [pd $0-slider-data]. Set this subpatch window aside, because to actually draw into this subpatch we need to use the [append] object from the parent patch. We don't have to place anything in here by hand, but we do need the window open so we can see what we are drawing!
 
-Go ahead and take a look at the help file for [append]. It works like this: [append template-name var1 var2 var3...]. 
+Go ahead and take a look at the help file for [append]. It works like this: [append struct-name var1 var2 var3...]. 
 
 In our case, it's [append $0-slider-template w h w2 h2 rgb]. This creates 6 inlets, one corresponding to each variable, and the last one on the right is for a pointer to the subpatch we want to draw in. [append] needs this pointer before it can append anything to the subpatch, otherwise it wouldn't know where to append it! To get this pointer, we create a [pointer] object and send it a message to traverse the data subpatch, then bang the first result. After hooking up all of the inlets, your patch should look something like this.
 
@@ -166,11 +166,11 @@ If you've gotten to the point of drawing the rectangle in the subpatch, you may 
 
 ![](http://i.imgur.com/bCfBlOp.png)
 
-It is inefficient to clear and recreate the strcut object over and over. It would be nice to just modify just one object using [set], but since we are building this into an abstraction we run into a couple of problems:
+It is inefficient to clear and recreate the struct object over and over. It would be nice to just modify just one object using [set], but since we are building this into an abstraction we run into a couple of problems:
 * If you move the abstraction, it doesn't move the struct that you draw!
-* If you are using graph-on-parent and and not clearing the subpatch, that original object never goes away. Not even after you delete the subpatch! You'd have to reload the file for it to disappear.
+* If you are using graph-on-parent and not clearing the subpatch, that original object never goes away. Not even after you delete the subpatch! You'd have to reload the file for it to disappear.
 
-Whenever you clear the subpatch, you have to  have to give [append] the pointer to it again. The easiest way to do all this is to just use a \[metro\] object to do it automatically every half second or so.
+Whenever you clear the subpatch, you have to give [append] the pointer to it again. The easiest way to do all this is to just use a \[metro\] object to do it automatically every half second or so.
 
 ![](http://i.imgur.com/Y7ziv0c.png)
 
