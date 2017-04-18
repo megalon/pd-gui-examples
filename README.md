@@ -129,9 +129,9 @@ This is an abstraction containing a slider with a rectangle drawn on top of it t
 
 ![](http://i.imgur.com/5ikbjjD.png)
 
-If you've already used structs before, you can probably build this yourself and skip to the next section. If not, then keep reading as I'll try and go into it. 
+If you've already used structs before, you can probably build this yourself. If not, then keep reading as I'll try and go into it. 
 
-In order to build this abstraction, create a new file named colored_slider \(or whatever you want the abstraction to be called\) and make a new subpatch like mine, [pd $0-slider-template].
+In order to build this abstraction, create a new file named colored_slider.pd \(or whatever you want the abstraction to be called\) and make a new subpatch like mine, [pd $0-slider-template].
 
 ![](http://i.imgur.com/bjT1oKP.png)
 
@@ -156,15 +156,18 @@ If you don't, I'll go through some troubleshooting below.
 Troubleshooting:
 
 * Error *"pointer: list 'pd-1003-slider-data' not found"* or similar : make sure you are spelling the subpatch name correctly.
+* Error *"pd-#-slider-template.w: no such field"* or similar : This means that append cannot find the variable "w" within the template. Make sure that you set up the struct correctly.
 * Error *"append: no current pointer"* : make sure that you bang the message to the pointer object before banging the append object. This might lead to the next error...
 * Error *"append: stale pointer"* : This happens when you try to append without having set the pointer, then you set the pointer afterwards. The only way I've gotten it to go away is by closing the patch and reopening it. I don't have a good understanding of pointers in PD, so there might be a better way to fix this.
-* No error, but nothing appears in the data patch : Make sure the color rgb isn't set to white (999), and make sure that the w and h values are not negative.
+* No error, but nothing appears in the data patch : Make sure the color rgb isn't set to white (999), and make sure that the w and h values are not negative. Also check your template subpatch, and make sure the draw objects are set up correctly. For example, [drawpolygon] and [fillpolygon] have a different number of arguments, and if you mix them up it might not throw an error, but it will display incorrectly.
 
 If you've gotten to the point of drawing the rectangle in the subpatch, you may have noticed by now that if you modify any of the values and bang [append] again, it creates a new object with those values, and leaves the old object there! We can avoid this by clearing the subpatch using the message \[clear\( to \[send pd-$0-slider-data\].
 
 ![](http://i.imgur.com/bCfBlOp.png)
 
-It is possible to append just one struct, then modify it's data using [set], but since we are building this into an abstraction we run into a problem. If you are using graph-on-parent and calling [set] to change the values, that original object never goes away, even after you delete the subpatch! You'd have to reload the file for it to disappear.
+It is inefficient to clear and recreate the strcut object over and over. It would be nice to just modify just one object using [set], but since we are building this into an abstraction we run into a couple of problems:
+* If you move the abstraction, it doesn't move the struct that you draw!
+* If you are using graph-on-parent and and not clearing the subpatch, that original object never goes away. Not even after you delete the subpatch! You'd have to reload the file for it to disappear.
 
 Whenever you clear the subpatch, you have to  have to give [append] the pointer to it again. The easiest way to do all this is to just use a \[metro\] object to do it automatically every half second or so.
 
@@ -194,9 +197,12 @@ With normal GUI objects like the hslider, you can change their colors using the 
 
 To make things easier I made two helper objects for setting the colors.
 
-![](http://i.imgur.com/B7wVZel.png) 
+![](http://i.imgur.com/J4pNSJh.png)
 
 Parameters changed using the messages are not saved when the patch is loaded, so you have to loadbang messages, or use some other state saving method.
+
+![](http://i.imgur.com/B7wVZel.png) 
+
 ___________
 All of the pd files I've included here are within the github repo. If you have any questions, you can find me on Reddit with the username:
 ```
