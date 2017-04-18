@@ -1,0 +1,52 @@
+#N struct 1017-slider-template float x float y float w float h float
+w2 float h2 float rgb;
+#N struct 1020-slider-template float x float y float w float h float
+w2 float h2 float rgb;
+#N struct 1021-slider-template float x float y float w float h float
+w2 float h2 float rgb;
+#N struct 1022-slider-template float x float y float w float h float
+w2 float h2 float rgb;
+#N canvas 557 136 1140 670 12;
+#X obj 76 477 colored_slider;
+#X obj 499 161 color_helper_for_GUIs;
+#X obj 462 376 pack symbol 0 0 0 0;
+#X msg 393 223 Attack;
+#X obj 462 42 loadbang;
+#X msg 621 131 211 0 0;
+#X msg 701 131 255 76 25;
+#X msg 791 131 211 0 0;
+#X obj 462 67 t b b;
+#X msg 391 254 Decay;
+#X msg 391 284 Sustain;
+#X msg 391 314 Release;
+#X obj 886 249 color_helper_for_structs;
+#X obj 76 507 colored_slider;
+#X obj 76 537 colored_slider;
+#X obj 76 567 colored_slider;
+#X msg 886 219 6 0 0;
+#X connect 1 0 2 1;
+#X connect 1 1 2 2;
+#X connect 1 2 2 3;
+#X connect 2 0 0 1;
+#X connect 2 0 13 1;
+#X connect 2 0 14 1;
+#X connect 2 0 15 1;
+#X connect 3 0 0 1;
+#X connect 4 0 8 0;
+#X connect 5 0 1 1;
+#X connect 6 0 1 2;
+#X connect 7 0 1 3;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 9 0;
+#X connect 8 0 10 0;
+#X connect 8 0 11 0;
+#X connect 8 1 5 0;
+#X connect 8 1 6 0;
+#X connect 8 1 7 0;
+#X connect 8 1 16 0;
+#X connect 9 0 13 1;
+#X connect 10 0 14 1;
+#X connect 11 0 15 1;
+#X connect 12 0 2 4;
+#X connect 16 0 12 0;
