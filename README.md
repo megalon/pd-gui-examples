@@ -62,10 +62,11 @@ For the inlets/outlets: Subtract another 2 from the height, and move the canvas 
 
 For the name: There are a couple of ways you can do this....
 
-* Normal: Subtract another 20 from the height, then move the canvas down 20 pixels. 
+Normal: Subtract another 20 from the height, then move the canvas down 20 pixels. 
 
 ![](https://i.imgur.com/chXt2k5.png)
-* Better: Instead of resizing the canvas, simply change the canvas's label to the name of the object. You can also change the label's color as well. 
+
+Better: Instead of resizing the canvas, simply change the canvas's label to the name of the object. You can also change the label's color as well. 
 
 ![](https://i.imgur.com/lN2Kd4W.png)
 
