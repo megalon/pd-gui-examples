@@ -8,7 +8,7 @@
 
 ## Absolute Basics
 
-If you've never touched PD before, check out some of the links in the sidebar. [These tutorials helped me a lot.](http://write.flossmanuals.net/pure-data/introduction2/)
+If you've never touched PD before, check out some of the links in the sidebar of [/r/puredata.](https://www.reddit.com/r/puredata/) [These tutorials helped me a lot.](http://write.flossmanuals.net/pure-data/introduction2/)
 
 If you know basic pd but just haven't really made a GUI before, these tips should help you get started making the simplest GUIs.
 
