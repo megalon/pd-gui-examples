@@ -204,6 +204,8 @@ Parameters changed using the messages are not saved when the patch is loaded, so
 
 ![](http://i.imgur.com/gnT8dAI.png) 
 
+If you'd like to get even more advanced and add actual images to your PD patch, check out my other project, [pd-image-to-structs.](https://github.com/megalon/pd-image-to-structs)
+
 All of the pd files I've included here are within the github repo. If you have any questions, you can find me on Reddit with the username:
 ```
 _megalon_
